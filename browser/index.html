@@ -1,0 +1,96 @@
+<html><head>
+  <title>ShadowTab</title>
+  <link rel="icon" type="image/png" href="tabicon.png">
+  <style>
+    /* Dark Theme */
+    body {
+      background-color: #1a1a1a;
+      color: red;
+      text-align: center;
+    }
+
+    /* ShadowTab Logo */
+    #shadowtab-logo {
+      margin-top: 50px;
+    }
+
+    #shadowtab-logo img {
+      max-width: 80%; /* Limit the width to 80% of the container */
+      max-height: 200px; /* Limit the height to 200 pixels */
+    }
+
+    /* Search Input Styling */
+    #search-container {
+      margin-top: 30px;
+      position: relative;
+    }
+
+    #search-bar {
+      width: 360px;
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      padding-left: 30px; /* Adjust padding to accommodate the search icon */
+    }
+
+    #search-bar:focus {
+      outline: none;
+    }
+
+    /* Bookmarks */
+    #bookmarks-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bookmark {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background-color: #444;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .bookmark:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="shadowtab-logo">
+    <img src="Full_logo.png" alt="ShadowTab Logo">
+  </div>
+
+  <!-- Search Bar -->
+  <div id="search-container">
+    <form action="https://www.google.com/search" method="get" onsubmit="return performSearch()">
+      <input type="text" name="q" id="search-bar" placeholder="Search Google">
+    </form>
+  </div>
+
+  <!-- Bookmarks -->
+  <div id="bookmarks-container">
+    <a class="bookmark" href="https://www.guilded.gg" target="_blank">Guilded.gg</a>
+    <a class="bookmark" href="https://discord.com/app" target="_blank">Discord</a>
+    <a class="bookmark" href="https://www.youtube.com" target="_blank">YouTube</a>
+  </div>
+
+  <!-- Script for handling search -->
+  <script>
+    function performSearch() {
+      const searchTerm = encodeURIComponent(document.getElementById("search-bar").value);
+      const searchUrl = "https://www.google.com/search?q=" + searchTerm;
+      window.location.href = searchUrl;
+      return false; // Prevent form submission
+    }
+  </script>
+
+
+</body></html>
